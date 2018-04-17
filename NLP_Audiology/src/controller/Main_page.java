@@ -23,14 +23,6 @@ public class Main_page extends Application {
     @FXML
     private AnchorPane anchorPane;
 
-    public static void main(String[] args) {
-        //launch(args);
-//        ListView<String> list = new ListView<String>();
-//        ObservableList<String> items = FXCollections.observableArrayList (
-//                "Single", "Double", "Suite", "Family App");
-//        list.setItems(items);
-    }
-
     @Override
     public void start(Stage primaryStage) {
 
@@ -38,21 +30,11 @@ public class Main_page extends Application {
 
     public void addReportButtonAction(ActionEvent event) throws IOException {
         ((Node)(event.getSource())).getScene().getWindow().hide();
-        Parent parent = FXMLLoader.load(getClass().getResource("/layout/PatientInformation.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/layout/NewDocument.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(parent);
         stage.setScene(scene);
         stage.setTitle("Patient Info Page");
-        stage.show();
-    }
-
-    public void exitButtonAction(ActionEvent event) throws IOException {
-        ((Node)(event.getSource())).getScene().getWindow().hide();
-        Parent parent = FXMLLoader.load(getClass().getResource("/layout/Login.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setTitle("Login Page");
         stage.show();
     }
 }

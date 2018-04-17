@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login_page">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login_page">
    <children>
       <TextField fx:id="ID" layoutX="103.0" layoutY="136.0" prefHeight="34.0" prefWidth="412.0" />
       <PasswordField fx:id="password" layoutX="103.0" layoutY="225.0" prefHeight="34.0" prefWidth="412.0" />
@@ -21,7 +21,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button onAction="#loginButtonAction" layoutX="450.0" layoutY="302.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="74.0" text="Login" />
+      <Button layoutX="450.0" layoutY="302.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="34.0" prefWidth="74.0" text="Login" />
       <Button layoutX="358.0" layoutY="302.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="74.0" text="Exit" />
    </children>
 </Pane>
