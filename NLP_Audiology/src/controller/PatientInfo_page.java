@@ -1,24 +1,34 @@
 package controller;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class PatientInfo_page extends Application {
-
-    public static void main(String[] args) {
-        launch(args);
-    }
+public class PatientInfo_page implements Initializable {
+    @FXML
+    public ListView<String> recordList;
 
     @Override
-    public void start(Stage primaryStage) {
-
+    public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<String> records = FXCollections.observableArrayList();
+        records.add("05012018_record_1");
+        records.add("02112014_record_2");
+        records.add("12222013_record_3");
+        records.add("07012010_record_4");
+        recordList.setItems(records);
     }
 
     public void backButtonAction(ActionEvent event) throws IOException {

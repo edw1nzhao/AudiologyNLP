@@ -14,9 +14,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="listview" layoutX="170.0" layoutY="86.0" prefHeight="294.0" prefWidth="406.0" />
+      <ListView fx:id="patientList" layoutX="170.0" layoutY="86.0" prefHeight="294.0" prefWidth="406.0" />
       <TextField fx:id="searchBar" layoutX="170.0" layoutY="34.0" prefHeight="36.0" prefWidth="406.0" promptText="Search" text="Search By Patient" />
        <Button layoutX="57.0" layoutY="316.0" mnemonicParsing="false" onAction="#addReportButtonAction" text="Add Report" />
+      <Button onAction="#viewPatientButtonAction" layoutX="54.0" layoutY="277.0" mnemonicParsing="false" text="View Patient" />
 
    </children>
 </AnchorPane>
