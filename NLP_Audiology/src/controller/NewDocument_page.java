@@ -38,7 +38,7 @@ public class NewDocument_page extends Application {
 
     public void scanButton(ActionEvent event) throws IOException {
         ((Node)(event.getSource())).getScene().getWindow().hide();
-        Parent parent = FXMLLoader.load(getClass().getResource("/layout/Extracted.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/layout/RecordExtracted.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(parent);
         stage.setScene(scene);
