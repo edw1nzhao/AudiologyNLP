@@ -55,4 +55,14 @@ public class DisplayRecord_page implements Initializable{
         stage.setTitle("Patient Information");
         stage.show();
     }
+
+    public void cancelButtonClicked(ActionEvent event) throws IOException {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent parent = FXMLLoader.load(getClass().getResource("/layout/Main.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.setTitle("Main Page");
+        stage.show();
+    }
 }

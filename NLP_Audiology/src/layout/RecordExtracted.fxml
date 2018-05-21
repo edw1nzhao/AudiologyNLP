@@ -40,7 +40,8 @@
                   <Label layoutX="4.0" layoutY="296.0" prefHeight="22.0" prefWidth="72.0" text="Diagnosis:" />
                   <TextArea fx:id="RecomendTextArea" layoutX="83.0" layoutY="395.0" prefHeight="136.0" prefWidth="370.0" promptText="Recommendation" />
                   <Label layoutX="4.0" layoutY="456.0" prefHeight="14.0" prefWidth="72.0" text="Recommand:" />
-                  <Button onAction="#saveButtonClicked" layoutX="397.0" layoutY="596.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="52.0" text="Save" />
+                  <Button layoutX="397.0" layoutY="596.0" mnemonicParsing="false" onAction="#saveButtonClicked" prefHeight="22.0" prefWidth="52.0" text="Save" />
+                  <Button onAction="#cancelButtonClicked" layoutX="330.0" layoutY="596.0" mnemonicParsing="false" text="Cancel" />
                </children></AnchorPane>
         </items>
       </SplitPane>
