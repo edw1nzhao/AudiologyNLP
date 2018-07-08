@@ -32,8 +32,7 @@ public class Login_page extends Application {
         stage.setScene(new Scene(root, 600, 400));
         stage.show();
     }
-
-
+    
     public static void main(String[] args) {
         launch(args);
     }
