@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="AudiologyNLP">
-    <output-path>$USER_HOME$/Downloads</output-path>
-    <root id="archive" name="AudiologyNLP.jar" />
-  </artifact>
-</component>

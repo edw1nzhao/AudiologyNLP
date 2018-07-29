@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="controller.PatientInfo_page" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="main.java.com.controllers.PatientInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button onAction="#addReportButtonAction" layoutX="51.0" layoutY="326.0" mnemonicParsing="false" text="Add Report" />
       <TextField fx:id="searchBar" layoutX="180.0" layoutY="44.0" prefHeight="36.0" prefWidth="406.0" promptText="Search" />

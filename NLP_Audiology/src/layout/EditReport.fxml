@@ -10,6 +10,6 @@
             prefWidth="700.0"
              xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="layout.EditReport">
+            fx:controller="main.java.com.core.EditReport">
 
 </AnchorPane>
