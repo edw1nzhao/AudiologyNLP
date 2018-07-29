@@ -16,7 +16,7 @@ public class LoginController implements Initializable {
     @FXML private Label errorMessage;
 
     @FXML protected void processLogin() {
-        if(!App.getInstance().userLogging(userId.getText(), password.getText())){
+        if(!App.getInstance().userLogin(userId.getText(), password.getText())){
             errorMessage.setText("Username/password combination is invalid.");
         }
     }

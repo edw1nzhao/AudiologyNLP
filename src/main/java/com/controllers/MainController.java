@@ -1,29 +1,35 @@
 package main.java.com.controllers;
 
-import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.util.Duration;
 import main.java.com.App;
 import main.java.com.model.User;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class MainController implements Initializable {
+    private static App app;
+    private static User user;
 
     @Override public void initialize(URL location, ResourceBundle resources) {
-        User user = App.getInstance().getUser();
+        app = App.getInstance();
+        user = app.getUser();
     }
 
     @FXML protected void processLogout() {
-        App.getInstance().userLogout();
+        app.userLogout();
     }
 
-    @FXML protected void processUpdate() {
-        User loggedUser = App.getInstance().getUser();
+    @FXML protected void processAddPatient() {
+        try {
+            app.replaceSceneContent("/main/resources/fxml/NewPatient.fxml");
+        } catch (Exception ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
 

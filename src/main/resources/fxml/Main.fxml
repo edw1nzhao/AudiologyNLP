@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane id="Profile" styleClass="profile" xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.com.controllers.MainController">
-    <Button fx:id="update" maxHeight="2.0" onAction="#processUpdate" text="Update" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="168.0" />
-    <Label fx:id="message" layoutX="56.0" layoutY="77.0" text="Please review your profile data." />
-    <Label layoutX="56.0" layoutY="123.0" text="User:" />
-    <Label layoutX="56.0" layoutY="224.0" text="Phone:" />
-    <Label layoutX="56.0" layoutY="173.0" text="Email:" />
-    <TextField fx:id="user" editable="false" layoutX="149.0" layoutY="120.0" maxWidth="2.0" minHeight="30.0" minWidth="215.0" prefHeight="30.0" prefWidth="215.0" />
-    <TextField fx:id="email" layoutX="149.0" layoutY="171.0" maxWidth="2.0" minHeight="30.0" minWidth="215.0" prefHeight="30.0" prefWidth="215.0" />
-    <TextField fx:id="phone" layoutX="149.0" layoutY="224.0" maxWidth="2.0" minHeight="30.0" minWidth="215.0" prefHeight="30.0" prefWidth="215.0" />
-    <CheckBox fx:id="subscribed" layoutX="402.0" layoutY="120.0" text="Subscribed to NewsLetter" />
-    <Separator layoutX="380.0" layoutY="110.0" orientation="VERTICAL" prefHeight="155.0" />
-    <Hyperlink fx:id="logout" layoutY="24.0" onAction="#processLogout" text="logout" AnchorPane.rightAnchor="52.0" />
-    <Button fx:id="Button" defaultButton="true" disable="true" maxHeight="2.0" maxWidth="100.0" minWidth="100.0" onAction="#processLogout" prefWidth="100.0" text="Continue" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="52.0" />
-    <Label fx:id="success" layoutX="150.0" layoutY="450.0" opacity="0.0" text="Profile successfully updated!" />
-    <Label layoutX="56.0" layoutY="284.0" text="Address:" />
-    <TextArea fx:id="address" maxHeight="50.0" maxWidth="448.0" minHeight="50.0" minWidth="100.0" prefHeight="50.0" prefWidth="448.0" AnchorPane.bottomAnchor="109.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="289.0" />
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
 
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="Profile" styleClass="profile"
+        xmlns="http://javafx.com/javafx/8.0.121"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="main.java.com.controllers.MainController">
+
+    <children>
+        <Label alignment="CENTER" layoutX="30.0" layoutY="34.0" prefHeight="36.0" prefWidth="106.0" text="Main Page">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ListView fx:id="patientList" layoutX="170.0" layoutY="86.0" prefHeight="294.0" prefWidth="406.0" />
+        <TextField fx:id="searchBar" layoutX="170.0" layoutY="34.0" prefHeight="36.0" prefWidth="406.0" promptText="Search" text="Search By Patient" />
+        <Button layoutX="57.0" layoutY="316.0" mnemonicParsing="false" onAction="#processLogout" text="Logout" />
+        <Button onAction="#processAddPatient" layoutX="54.0" layoutY="277.0" mnemonicParsing="false" text="Add Patient" />
+    </children>
 </AnchorPane>

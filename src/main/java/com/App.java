@@ -1,11 +1,15 @@
 package main.java.com;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import main.java.com.model.User;
 import main.java.com.security.Auth;
@@ -15,6 +19,8 @@ public class App extends Application {
     private User loggedUser;
 
     private static App instance;
+    private static final FileChooser fc = new FileChooser();
+    private Desktop desktop = Desktop.getDesktop();
 
     public App() {
         instance = this;
@@ -42,7 +48,7 @@ public class App extends Application {
         return loggedUser;
     }
 
-    public boolean userLogging(String userId, String password){
+    public boolean userLogin(String userId, String password){
         if (Auth.validate(userId, password)) {
             loggedUser = User.of(userId);
             gotoMain();
@@ -73,9 +79,19 @@ public class App extends Application {
         }
     }
 
-    private Parent replaceSceneContent(String fxml) throws Exception {
+    public void loadFile() {
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF", "*.pdf*"));
+        File file = fc.showOpenDialog(stage);
+        
+        if (file != null) {
+            // DO SOMETHING
+        }
+
+    }
+
+    public Parent replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxml));
-        Parent page = (Parent) loader.load();
+        Parent page = loader.load();
 
         Scene scene = stage.getScene();
         if (scene == null) {
