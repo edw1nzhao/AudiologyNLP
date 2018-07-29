@@ -82,7 +82,7 @@ public class App extends Application {
     public void loadFile() {
         fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF", "*.pdf*"));
         File file = fc.showOpenDialog(stage);
-        
+
         if (file != null) {
             // DO SOMETHING
         }
