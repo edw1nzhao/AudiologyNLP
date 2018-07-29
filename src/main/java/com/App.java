@@ -4,17 +4,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.com.model.User;
 import main.java.com.security.Auth;
 
-/**
- * Main Application. This class handles navigation and user session.
- * @author Tarun Tyagi
- */
 public class App extends Application {
     private Stage stage;
     private User loggedUser;
@@ -29,9 +24,6 @@ public class App extends Application {
         return instance;
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }

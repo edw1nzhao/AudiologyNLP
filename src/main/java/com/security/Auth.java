@@ -7,7 +7,7 @@ public class Auth {
     private static final Map<String, String> USERS = new HashMap<String, String>();
 
     static {
-        USERS.put("name", "password");
+        USERS.put("admin", "pass");
     }
     public static boolean validate(String user, String password){
         String validUserPassword = USERS.get(user);
