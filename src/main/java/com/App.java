@@ -2,7 +2,6 @@ package main.java.com;
 
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -19,7 +18,8 @@ public class App extends Application {
     private User loggedUser;
 
     private static App instance;
-    private static final FileChooser fc = new FileChooser();
+    private static FileChooser fc = new FileChooser();
+
     private Desktop desktop = Desktop.getDesktop();
 
     public App() {
@@ -79,14 +79,21 @@ public class App extends Application {
         }
     }
 
-    public void loadFile() {
-        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF", "*.pdf*"));
+    /* TODO: Return something else instead of a String
+     * Also do something else in the file != null
+     */
+    public String loadFile() {
+        FileChooser.ExtensionFilter fileExtensions =
+                new FileChooser.ExtensionFilter(
+                        "PDF pages", "*.pdf");
+
+        fc.getExtensionFilters().add(fileExtensions);
         File file = fc.showOpenDialog(stage);
 
         if (file != null) {
-            // DO SOMETHING
+            return file.toString();
         }
-
+        return "";
     }
 
     public Parent replaceSceneContent(String fxml) throws Exception {
@@ -100,6 +107,7 @@ public class App extends Application {
         } else {
             stage.getScene().setRoot(page);
         }
+
         stage.sizeToScene();
         return page;
     }

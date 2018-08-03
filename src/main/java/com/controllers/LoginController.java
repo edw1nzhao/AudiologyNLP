@@ -22,7 +22,7 @@ public class LoginController implements Initializable {
     }
 
     @Override public void initialize(URL url, ResourceBundle rb) {
-        userId.setPromptText("demo");
-        password.setPromptText("demo");
+        userId.setPromptText("UserID");
+        password.setPromptText("Password");
     }
 }
