@@ -5,7 +5,7 @@ about: Basic Issue Template
 ---
 
 <!--- Provide a general summary of the issue in the Title above -->
-
+<!--- Issue: As a Doctor, I want to have the software tell me report findings so that I can act accordingly. -->
 ## Expected Behavior
 <!--- If you're describing a bug, tell us what should happen -->
 <!--- If you're suggesting a change/improvement, tell us how it should work -->
