@@ -10,8 +10,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-public class MainController implements Initializable {
+public class EditUserController implements Initializable {
     private static App app;
     private static User user;
 
@@ -20,20 +19,10 @@ public class MainController implements Initializable {
         user = app.getUser();
     }
 
-    @FXML protected void processLogout() {
-        app.userLogout();
-    }
-
-    @FXML protected void processEditUser() {
+    @FXML
+    protected void processBack() {
         try {
-            app.replaceSceneContent("/main/resources/fxml/EditUser.fxml");
-        } catch (Exception ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    @FXML protected void processAddPatient() {
-        try {
-            app.replaceSceneContent("/main/resources/fxml/NewPatient.fxml");
+            app.replaceSceneContent("/main/resources/fxml/Main.fxml");
         } catch (Exception ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }

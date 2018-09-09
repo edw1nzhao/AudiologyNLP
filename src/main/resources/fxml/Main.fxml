@@ -3,17 +3,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.layout.AnchorPane?>
-
-
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.control.Separator?>
-<AnchorPane id="Profile" styleClass="profile"
-            xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.java.com.controllers.MainController"
-            prefWidth="700" prefHeight="550">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="Profile" prefHeight="550" prefWidth="700" styleClass="profile" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.controllers.MainController">
 
     <children>
         <Label alignment="CENTER" layoutX="80.0" layoutY="100.0" prefHeight="36.0" prefWidth="100.0" text="Main Page">
@@ -22,9 +17,9 @@
             </font>
         </Label>
 
-
-        <Button onAction="#processAddPatient" layoutX="70.0" layoutY="380.0" prefWidth="100.0" mnemonicParsing="false" text="Add Patient" />
-        <Button layoutX="70.0" layoutY="420.0" mnemonicParsing="false" prefWidth="100.0" onAction="#processLogout" text="Logout" />
+        <Button layoutX="70.0" layoutY="340.0" mnemonicParsing="false" onAction="#processAddPatient" prefWidth="100.0" text="Add Patient" />
+        <Button layoutX="70.0" layoutY="380.0" mnemonicParsing="false" onAction="#processEditUser" prefWidth="100.0" text="Edit User" />
+        <Button layoutX="70.0" layoutY="420.0" mnemonicParsing="false" onAction="#processLogout" prefWidth="100.0" text="Logout" />
 
         <Separator layoutX="225.0" layoutY="75.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0" />
 
