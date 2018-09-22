@@ -5,6 +5,10 @@ import javafx.fxml.Initializable;
 import main.java.com.App;
 import main.java.com.model.User;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -52,6 +56,18 @@ public class NewPatientController implements Initializable {
             app.replaceSceneContent("/main/resources/fxml/PostScan.fxml");
         } catch (Exception e) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            Process p = Runtime.getRuntime().exec("tesseract test.png out");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    p.getInputStream()));
+            String readline;
+            while ((readline = reader.readLine()) != null) {
+                System.out.println(readline);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
         }
     }
 }

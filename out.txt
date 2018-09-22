@@ -1,0 +1,32 @@
+Purpose
+
+This client Charter documents and tracks the necessary information to establish a shared
+understanding between the Client and the students for the AudiologyNLP project. This
+Charter includes information about the students' responsibilities to the client and the limits
+oftheir participation, as well as the Client's responsibilities during the course ofthe project.
+
+The intended audience ofthe client Charter is the Client, course instructors and the student
+team.
+
+Client Responsibilities
+
+The Client agrees to review students' work at various stages in the semester and provide
+the team with feedback on their requirements and other deliverables as well as their
+communication with the team. The instructors will request feedback on student
+performance once or twice during each semester; this feedback will be factored into part of
+the students' course grade.
+
+There is no Charge to participate as a Client; however, any special requirements for
+development, equipment, and web hosting costs, for example, will be borne by the Client.
+Most projects do not incur a cost.
+
+Student Responsibilities
+
+The students are responsible for working with the Client to establish the requirements for
+the project and to scope the project appropriately for two semesters. Table 1 presents the
+deliverables for the project.
+
+Students will be evaluated on their performance as a team according to the following
+categories: professionalism, communication, timeliness, quality of deliverables, assessment
+of prototypes (ﬁrst semester], and assessment of ﬁnal product (second semester].
+
