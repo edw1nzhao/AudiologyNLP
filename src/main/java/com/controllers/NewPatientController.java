@@ -26,6 +26,9 @@ public class NewPatientController implements Initializable {
         user = app.getUser();
     }
 
+    /*
+        Edit here for file upload
+    */
     @FXML
     protected void processLoadFile() {
         String fp = app.loadFile();
@@ -50,6 +53,9 @@ public class NewPatientController implements Initializable {
         }
     }
 
+    /*
+        replace line 68, test.png in command to user input file name
+     */
     @FXML
     protected void processScan() {
         try {
@@ -66,6 +72,7 @@ public class NewPatientController implements Initializable {
             while ((readline = reader.readLine()) != null) {
                 System.out.println(readline);
             }
+            System.out.println("out.txt created");
         } catch (IOException e) {
             System.out.println(e);
         }

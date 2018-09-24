@@ -2,53 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d534c86-df3b-47bf-af7e-c288ff2e6047" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudiologyNLP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AudiologyNLP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/AudiologyNLP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/NLP_Audiology.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/controller/patientExample.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/DetailReport.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/EditReport.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/Extracted.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/Main.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/NewDocument.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/PatientInformation.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/out/production/NLP_Audiology/layout/RecordExtracted.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/AudiologyNLP$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/AudiologyNLP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/LoginScene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/MainScene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/controller/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/controller/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/controller/patientExample.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/DetailReport.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/EditReport.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/Extracted.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/Main.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/NewDocument.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/PatientInformation.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/NLP_Audiology/src/layout/RecordExtracted.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/main/resources/fxml/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/main/resources/fxml/Main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Main.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,11 +19,11 @@
     <session id="-542141522">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -82,12 +40,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="229" />
+          <entry key="JAVA" value="432" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="229" />
+          <entry key="java" value="432" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -98,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="28" column="76" lean-forward="true" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -118,10 +76,8 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/NewPatient.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95" />
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -163,8 +119,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+            <state relative-caret-position="336">
+              <caret line="56" column="68" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,21 +136,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/Main.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="271" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1487" />
-    <option name="height" value="912" />
+    <option name="width" value="1920" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,7 +205,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -289,14 +245,14 @@
     <frame x="0" y="22" width="1920" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1970181" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19914803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32872927" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28821364" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -323,6 +279,17 @@
           <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
         </state>
       </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ProcessBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/model/Patient.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -354,36 +321,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="270">
+          <caret line="28" column="76" lean-forward="true" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/NewPatient.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/Main.fxml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ProcessBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/NewPatient.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95" />
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+        <state relative-caret-position="336">
+          <caret line="56" column="68" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
