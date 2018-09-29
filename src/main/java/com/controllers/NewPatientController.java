@@ -1,26 +1,29 @@
 package main.java.com.controllers;
 
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import main.java.com.App;
 import main.java.com.model.User;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.awt.event.ActionEvent;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.control.Label;
 
 public class NewPatientController implements Initializable {
     private static App app;
     private static User user;
+    private File selectedFile;
 
     @FXML
-    private Label FilePath;
+    private TextField fileName;
     @Override public void initialize(URL location, ResourceBundle resources) {
         app = App.getInstance();
         user = app.getUser();
@@ -31,8 +34,16 @@ public class NewPatientController implements Initializable {
     */
     @FXML
     protected void processLoadFile() {
-        String fp = app.loadFile();
-        FilePath.setText(fp);
+        FileChooser fileChooser = new FileChooser();
+        selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+            System.out.println("selected: " + selectedFile.getName());
+            fileName.setText(selectedFile.getName());
+        }
+        else {
+            System.out.println("not selected");
+        }
     }
 
     @FXML
@@ -59,13 +70,8 @@ public class NewPatientController implements Initializable {
     @FXML
     protected void processScan() {
         try {
-            app.replaceSceneContent("/main/resources/fxml/PostScan.fxml");
-        } catch (Exception e) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
-        }
 
-        try {
-            Process p = Runtime.getRuntime().exec("tesseract test.png out");
+            Process p = Runtime.getRuntime().exec("tesseract " + selectedFile.getName() + " out");
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     p.getInputStream()));
             String readline;
@@ -75,6 +81,30 @@ public class NewPatientController implements Initializable {
             System.out.println("out.txt created");
         } catch (IOException e) {
             System.out.println(e);
+        }
+
+//        Task<Void> sleeper = new Task<Void>() {
+//            @Override
+//            protected Void call() throws Exception {
+//                try {
+//                    Thread.sleep(5000);
+//                } catch (InterruptedException e) {
+//                }
+//                return null;
+//            }
+//        };
+//        sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+//            @Override
+//            public void handle(WorkerStateEvent event) {
+//
+//            }
+//        });
+//        new Thread(sleeper).start();
+
+        try {
+            app.replaceSceneContent("/main/resources/fxml/PostScan.fxml");
+        } catch (Exception e) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 }
