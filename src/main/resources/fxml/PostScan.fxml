@@ -9,7 +9,7 @@
 
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<AnchorPane prefHeight="550" prefWidth="700" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.com.controllers.PostScanController">
+<AnchorPane prefHeight="700" prefWidth="700" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.com.controllers.PostScanController">
 
 <children>
     <Label alignment="CENTER" layoutX="50.0" layoutY="100.0" prefHeight="36.0" prefWidth="150.0" text="Edit Document">

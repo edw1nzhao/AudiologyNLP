@@ -1,16 +1,12 @@
 package main.java.com.controllers;
 
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import main.java.com.App;
 import main.java.com.model.User;
-
-import java.awt.event.ActionEvent;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,8 +36,7 @@ public class NewPatientController implements Initializable {
         if (selectedFile != null) {
             System.out.println("selected: " + selectedFile.getName());
             fileName.setText(selectedFile.getName());
-        }
-        else {
+        } else {
             System.out.println("not selected");
         }
     }
@@ -69,42 +64,34 @@ public class NewPatientController implements Initializable {
      */
     @FXML
     protected void processScan() {
-        try {
+        if (selectedFile != null) {
+            try {
 
-            Process p = Runtime.getRuntime().exec("tesseract " + selectedFile.getName() + " out");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(
-                    p.getInputStream()));
-            String readline;
-            while ((readline = reader.readLine()) != null) {
-                System.out.println(readline);
+                Process p = Runtime.getRuntime().exec("tesseract " + selectedFile.getName() + " out");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(
+                        p.getInputStream()));
+                String readline;
+                while ((readline = reader.readLine()) != null) {
+                    System.out.println(readline);
+                }
+                System.out.println("out.txt created");
+            } catch (IOException e) {
+                System.out.println(e);
             }
-            System.out.println("out.txt created");
-        } catch (IOException e) {
-            System.out.println(e);
-        }
 
-//        Task<Void> sleeper = new Task<Void>() {
-//            @Override
-//            protected Void call() throws Exception {
-//                try {
-//                    Thread.sleep(5000);
-//                } catch (InterruptedException e) {
-//                }
-//                return null;
-//            }
-//        };
-//        sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
-//            @Override
-//            public void handle(WorkerStateEvent event) {
-//
-//            }
-//        });
-//        new Thread(sleeper).start();
+            try {
+                app.replaceSceneContent("/main/resources/fxml/PostScan.fxml");
+            } catch (Exception e) {
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("No file chosen!");
 
-        try {
-            app.replaceSceneContent("/main/resources/fxml/PostScan.fxml");
-        } catch (Exception e) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
+            // alert.setHeaderText("Results:");
+            alert.setContentText("Please select a file before scan");
+
+            alert.showAndWait();
         }
     }
 }

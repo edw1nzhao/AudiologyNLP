@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d534c86-df3b-47bf-af7e-c288ff2e6047" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/main/java/com/controllers/NewPatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/main/java/com/controllers/NewPatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/main/java/com/controllers/PostScanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/main/java/com/controllers/PostScanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/main/resources/fxml/NewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/main/resources/fxml/NewPatient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AudiologyNLP/main/resources/fxml/PostScan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AudiologyNLP/main/resources/fxml/PostScan.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controllers/PostScanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controllers/PostScanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/NewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/NewPatient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,14 +42,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1418" />
-          <entry key="XML" value="237" />
+          <entry key="JAVA" value="1458" />
+          <entry key="XML" value="240" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="fxml" value="237" />
-          <entry key="java" value="1418" />
+          <entry key="fxml" value="240" />
+          <entry key="java" value="1458" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -76,8 +67,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="420">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -152,8 +143,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+            <state relative-caret-position="429">
+              <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,8 +162,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/fxml/Main.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/NewPatient.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/controllers/PostScanController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java" />
       </list>
     </option>
@@ -372,8 +363,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/PostScan.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -389,8 +380,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controllers/NewPatientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+        <state relative-caret-position="429">
+          <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
