@@ -24,10 +24,7 @@ public class NewPatientController implements Initializable {
         app = App.getInstance();
         user = app.getUser();
     }
-
-    /*
-        Edit here for file upload
-    */
+    
     @FXML
     protected void processLoadFile() {
         FileChooser fileChooser = new FileChooser();
@@ -59,9 +56,6 @@ public class NewPatientController implements Initializable {
         }
     }
 
-    /*
-        replace line 68, test.png in command to user input file name
-     */
     @FXML
     protected void processScan() {
         if (selectedFile != null) {
