@@ -8,6 +8,10 @@ import main.java.com.model.User;
 
 import java.awt.*;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.charset.Charset;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -18,7 +22,7 @@ import javafx.scene.control.TextArea;
 public class PostScanController implements Initializable {
     private static App app;
     private static User user;
-    private File file;
+    private Path file;
 
     @FXML
     private TextArea textArea;
@@ -27,15 +31,17 @@ public class PostScanController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         app = App.getInstance();
         user = app.getUser();
-        file = new File("out.txt");
+        file = Paths.get("out.txt");
         try {
 
-            Scanner scan = new Scanner(file).useDelimiter("\\s+");
-            while (scan.hasNextLine()) {
-                textArea.appendText(scan.nextLine() + "\n");
-            }
+//            Scanner scan = new Scanner(file).useDelimiter("\\s+");
+//            while (scan.hasNextLine()) {
+//                textArea.appendText(scan.nextLine() + "\n");
+//            }
+            String ocrtext = readFile(file);
+            textArea.setText(ocrtext);
 
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
@@ -53,11 +59,15 @@ public class PostScanController implements Initializable {
     @FXML
     protected void edit() {
         try {
-            FileWriter fw = new FileWriter(file.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(textArea.getText());
-            bw.flush();
-            bw.close();
+
+//            FileWriter fw = new FileWriter(file);
+//            BufferedWriter bw = new BufferedWriter(fw);
+//            bw.write(textArea.getText());
+//            bw.flush();
+//            bw.close();
+
+            String modified = textArea.getText();
+            Files.write(file, modified.getBytes());
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("File Edited");
@@ -75,6 +85,15 @@ public class PostScanController implements Initializable {
         } catch (Exception e) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
+    }
+
+
+    //helper method for reading files entirely into textarea
+    static String readFile(Path filename)
+            throws IOException
+    {
+        byte[] encoded = Files.readAllBytes(filename);
+        return new String(encoded);
     }
 
 }

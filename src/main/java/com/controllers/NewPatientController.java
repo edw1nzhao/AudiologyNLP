@@ -74,7 +74,7 @@ public class NewPatientController implements Initializable {
             }
 
             try {
-                app.replaceSceneContent("/main/resources/fxml/PostScan.fxml", 1000, 550);
+                app.replaceSceneContent("/main/resources/fxml/PostScan.fxml", 700, 550);
             } catch (Exception e) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
             }
