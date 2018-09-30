@@ -65,7 +65,7 @@ public class App extends Application {
 
     private void gotoMain() {
         try {
-            replaceSceneContent("/main/resources/fxml/Main.fxml");
+            replaceSceneContent("/main/resources/fxml/Main.fxml", 700, 550);
         } catch (Exception ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -73,7 +73,7 @@ public class App extends Application {
 
     private void gotoLogin() {
         try {
-            replaceSceneContent("/main/resources/fxml/Login.fxml");
+            replaceSceneContent("/main/resources/fxml/Login.fxml", 700, 550);
         } catch (Exception ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -96,17 +96,21 @@ public class App extends Application {
         return "";
     }
 
-    public Parent replaceSceneContent(String fxml) throws Exception {
+    public Parent replaceSceneContent(String fxml, int width, int height) throws Exception {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxml));
         Parent page = loader.load();
 
-        Scene scene = stage.getScene();
-        if (scene == null) {
-            scene = new Scene(page, 700, 550);
-            stage.setScene(scene);
-        } else {
-            stage.getScene().setRoot(page);
-        }
+        Scene scene = new Scene(page, width, height);
+        stage.setScene(scene);
+
+//        Scene scene = stage.getScene();
+//        if (scene == null) {
+//            System.out.println("" + width + " " + height);
+//            scene = new Scene(page, width, height);
+//            stage.setScene(scene);
+//        } else {
+//            stage.getScene().setRoot(page);
+//        }
 
         stage.sizeToScene();
         return page;

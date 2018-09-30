@@ -9,7 +9,7 @@
 
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<AnchorPane prefHeight="700" prefWidth="700" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.com.controllers.PostScanController">
+<AnchorPane prefHeight="550" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.com.controllers.PostScanController">
 
 <children>
     <Label alignment="CENTER" layoutX="50.0" layoutY="100.0" prefHeight="36.0" prefWidth="150.0" text="Edit Document">
@@ -19,10 +19,10 @@
     </Label>
 
     <Button layoutX="70.0" layoutY="420.0" mnemonicParsing="false" onAction="#processHome" prefWidth="100.0" text="Cancel" />
-    <Button layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#processHome" prefWidth="100.0" text="Save" />
+    <Button layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#edit" prefWidth="100.0" text="Save" />
 
     <Separator layoutX="225.0" layoutY="75.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0" />
 
-    <TextArea fx:id="textArea" layoutX="240.0" layoutY="80.0" prefHeight="400" prefWidth="400"></TextArea>
+    <TextArea fx:id="textArea" layoutX="240.0" layoutY="80.0" prefHeight="400" prefWidth="750"></TextArea>
 </children>
 </AnchorPane>

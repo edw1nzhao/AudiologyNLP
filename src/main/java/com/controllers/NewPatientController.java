@@ -44,7 +44,7 @@ public class NewPatientController implements Initializable {
     @FXML
     protected void processHome() {
         try {
-            app.replaceSceneContent("/main/resources/fxml/Main.fxml");
+            app.replaceSceneContent("/main/resources/fxml/Main.fxml", 700, 550);
         } catch (Exception e) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -53,7 +53,7 @@ public class NewPatientController implements Initializable {
     @FXML
     protected void processAddPatient() {
         try {
-            app.replaceSceneContent("/main/resources/fxml/NewPatient.fxml");
+            app.replaceSceneContent("/main/resources/fxml/NewPatient.fxml", 700, 550);
         } catch (Exception e) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -80,7 +80,7 @@ public class NewPatientController implements Initializable {
             }
 
             try {
-                app.replaceSceneContent("/main/resources/fxml/PostScan.fxml");
+                app.replaceSceneContent("/main/resources/fxml/PostScan.fxml", 1000, 550);
             } catch (Exception e) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
             }
