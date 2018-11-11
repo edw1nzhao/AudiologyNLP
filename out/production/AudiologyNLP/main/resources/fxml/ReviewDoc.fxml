@@ -16,7 +16,7 @@
             </font>
         </Label>
 
-        <Button layoutX="70.0" layoutY="420.0" mnemonicParsing="false" onAction="#processHome" prefWidth="100.0" text="Cancel" />
+        <Button layoutX="70.0" layoutY="420.0" mnemonicParsing="false" onAction="#processHome" prefWidth="100.0" text="Done" />
         <Button layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#edit" prefWidth="100.0" text="Edit" />
 
         <Separator layoutX="225.0" layoutY="75.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0" />
