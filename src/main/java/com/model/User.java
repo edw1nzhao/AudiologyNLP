@@ -11,7 +11,6 @@ public class User {
     private User(String id) {
         this.id = id;
     }
-
     public static User of(String id) {
         User user = USERS.get(id);
         if (user == null) {
@@ -24,4 +23,5 @@ public class User {
     public String getId() {
         return id;
     }
+
 }

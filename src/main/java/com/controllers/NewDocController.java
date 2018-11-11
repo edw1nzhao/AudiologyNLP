@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class NewPatientController implements Initializable {
+public class NewDocController implements Initializable {
     private static App app;
     private static User user;
     private File selectedFile;
@@ -50,7 +50,7 @@ public class NewPatientController implements Initializable {
     @FXML
     protected void processAddPatient() {
         try {
-            app.replaceSceneContent("/main/resources/fxml/NewPatient.fxml", 700, 550);
+            app.replaceSceneContent("/main/resources/fxml/NewDoc.fxml", 700, 550);
         } catch (Exception e) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -74,7 +74,7 @@ public class NewPatientController implements Initializable {
             }
 
             try {
-                app.replaceSceneContent("/main/resources/fxml/PostScan.fxml", 700, 550);
+                app.replaceSceneContent("/main/resources/fxml/ReviewDoc.fxml", 700, 550);
             } catch (Exception e) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
             }

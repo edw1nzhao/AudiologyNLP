@@ -6,20 +6,17 @@ import javafx.scene.control.Alert;
 import main.java.com.App;
 import main.java.com.model.User;
 
-import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.charset.Charset;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.TextArea;
 
-public class PostScanController implements Initializable {
+public class EditDocController implements Initializable {
     private static App app;
     private static User user;
     private Path file;
@@ -81,7 +78,7 @@ public class PostScanController implements Initializable {
         }
 
         try {
-            app.replaceSceneContent("/main/resources/fxml/NewPatient.fxml", 700, 550);
+            app.replaceSceneContent("/main/resources/fxml/ReviewDoc.fxml", 700, 550);
         } catch (Exception e) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }

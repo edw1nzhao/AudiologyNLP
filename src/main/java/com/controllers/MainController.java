@@ -24,9 +24,9 @@ public class MainController implements Initializable {
         app.userLogout();
     }
 
-    @FXML protected void processAddPatient() {
+    @FXML protected void processAddReport() {
         try {
-            app.replaceSceneContent("/main/resources/fxml/NewPatient.fxml", 700, 550);
+            app.replaceSceneContent("/main/resources/fxml/NewDoc.fxml", 700, 550);
         } catch (Exception ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
