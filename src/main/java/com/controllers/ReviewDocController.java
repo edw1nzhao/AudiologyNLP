@@ -33,26 +33,17 @@ public class ReviewDocController implements Initializable {
     private static App app;
     private static User user;
     private Path file;
+    private String output = "";
 
-    @FXML
-    private Label textArea;
+    @FXML private Label content;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        app = App.getInstance();
-//        user = app.getUser();
-//        file = Paths.get("out.txt");
-//        try {
-//
-////            Scanner scan = new Scanner(file).useDelimiter("\\s+");
-////            while (scan.hasNextLine()) {
-////                textArea.appendText(scan.nextLine() + "\n");
-////            }
-////
-//
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
+        app = App.getInstance();
+        user = app.getUser();
+        file = Paths.get("out.txt");
+
         //Loading the tokenizer model
         try {
             InputStream inputStreamTokenizer = new
@@ -86,10 +77,11 @@ public class ReviewDocController implements Initializable {
             Span nameSpans[] = nameFinder.find(tokens);
 
             //Printing the names and their spans in a sentence
-            System.out.print("NAMES: ");
+
+            output += "NAMES: ";
             for (Span s : nameSpans) {
                 //print out the name as well as its location
-                System.out.println(s.toString() + "  " + tokens[s.getStart()]);
+                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
 
                 //only print out name
                 //System.out.println(tokens[s.getStart()]);
@@ -102,11 +94,11 @@ public class ReviewDocController implements Initializable {
 
             NameFinderME dateFinder = new NameFinderME(date_model);
             Span dateSpans[] = dateFinder.find(tokens);
-            System.out.println();
+            output += "\n";
             //Printing the names and their spans in a sentence
-            System.out.print("DATES: ");
+            output += ("DATES: ");
             for (Span s : dateSpans) {
-                System.out.println(s.toString() + "  " + tokens[s.getStart()]);
+                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
             }
 
             //loading the location finder model
@@ -117,11 +109,11 @@ public class ReviewDocController implements Initializable {
             NameFinderME locationFinder = new NameFinderME(location_model);
             Span locationSpans[] = locationFinder.find(tokens);
 
-            System.out.println();
+            output+= "\n";
             //Printing the names and their spans in a sentence
-            System.out.print("LOCATIONS: ");
+            output += ("LOCATIONS: ");
             for (Span s : locationSpans) {
-                System.out.println(s.toString() + "  " + tokens[s.getStart()]);
+                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
             }
 
             //loading the organization finder model
@@ -132,16 +124,29 @@ public class ReviewDocController implements Initializable {
             NameFinderME orgFinder = new NameFinderME(org_model);
             Span orgSpans[] = orgFinder.find(tokens);
 
-            System.out.println();
+            output += "\n";
             //Printing the names and their spans in a sentence
-            System.out.print("Organizations: ");
+            output += ("Organizations: ");
             for (Span s : orgSpans) {
-                System.out.println(s.toString() + "  " + tokens[s.getStart()]);
+                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
             }
         } catch (IOException e) {
             System.out.println(e);
         }
 
+        output += "HEARING STATUS: OK";
+
+        content.setText(output);
+
+//        try {
+////            Scanner scan = new Scanner(file).useDelimiter("\\s+");
+////            while (scan.hasNextLine()) {
+////                textArea.appendText(scan.nextLine() + "\n");
+////            }
+////
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
     }
 
 
