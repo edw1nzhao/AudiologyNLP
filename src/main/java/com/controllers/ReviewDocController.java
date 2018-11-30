@@ -55,7 +55,7 @@ public class ReviewDocController implements Initializable {
 
             //read the input text as a single string
 
-            FileReader in = new FileReader("./Report.txt");
+            FileReader in = new FileReader("./out.txt");
             BufferedReader br = new BufferedReader(in);
 
             String line = br.readLine();

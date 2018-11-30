@@ -74,7 +74,7 @@ public class NewDocController implements Initializable {
             }
 
             try {
-                app.replaceSceneContent("/main/resources/fxml/ReviewDoc.fxml", 700, 550);
+                app.replaceSceneContent("/main/resources/fxml/EditDoc.fxml", 700, 550);
             } catch (Exception e) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
             }
