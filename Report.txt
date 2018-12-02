@@ -1,6 +1,6 @@
 Report_2016_001
 
-Patient Name: Jack Ma			DOB: May 6th 2017
+Patient Name: Jack Wood			DOB: May 6th 2017
 Parents: Amy Ma				DOE: 12/9/2015
 Referral Source: Dr.Peter Jones, MD	
 
@@ -18,7 +18,7 @@ An ABR was completed and a Wave V was presented and reliable down to the followi
 
 These results are within normal limits for the right ear. Results for the let ear suggest a mild conductive hearing loss.
 
-An acoustic impedance evaluation was completed using a 1000Hz probe tone and revealed normal middle ear pressure and mobility in the right ear, and a flat, Type B tympanogram in the left ear. Acoustic reflexes could not be obtained due to the inability to maintain an airtight seal.
+An acoustic impedance evaluation was completed using a 1000Hz probe tone and revealed normal middle ear pressure and mobility in the right ear, and a flat, Type B typmanogram in the left ear. Acoustic reflexes could not be obtained due to the inability to maintain an airtight seal.
 
 IMPRESSIONS AND RECOMMENDATIONS:
 Hearing is within normal limits for the right ear. There is a mild conductive hearing loss in the left ear. Middle ear function ear function is normal for the right ear and abnormal for the left ear. There results were discussed with Child's mother, and it is recommended that they follow up with DR.Last name for further medical follow up. It is also recommended that he return to our office after medical management for a repeat ABR. We will also complete Otoacoustic Emission(OAE) testing at that time, as well.

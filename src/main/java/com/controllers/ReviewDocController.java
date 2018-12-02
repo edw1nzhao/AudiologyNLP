@@ -4,8 +4,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import main.java.com.App;
 import main.java.com.model.User;
+import main.java.com.model.Report;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -18,6 +21,8 @@ import java.util.logging.Logger;
 
 import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
+import opennlp.tools.sentdetect.SentenceDetectorME;
+import opennlp.tools.sentdetect.SentenceModel;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.Span;
@@ -29,126 +34,233 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 
+import java.util.*;
+
 public class ReviewDocController implements Initializable {
     private static App app;
     private static User user;
     private Path file;
-    private String output = "";
+    private Report report;
 
-    @FXML private Label content;
+    //history subcategory
+    private List<String> hearingScreen = Arrays.asList("newborn hearing screen", "hearing screen",
+            "initial hearing screen", "subsquent screen", "re-screen", "follow up screen", "nbhs");
+    private List<String> hearingLoss = Arrays.asList("normal hearing range", "normal or abnormal hearing",
+            "reduced auditory sensitivity", "hearing loss", "undetermined", "indeterminate hearing loss",
+            "possible hearing loss", "loss in the right or left ear");
+    private List<String> earlyIntervention = Arrays.asList("receive early intervention", "auditory verbal therapy",
+            "physical therapy", "occupational therapy", "pt", "ot", "motor therapy", "speech therapy", "speech service",
+            "language therapy", "speech language therapy", "speech language pathology service",
+            "speech language pathology therapy", "communication therapy");
+    private List<String> riskFactors = Arrays.asList("vestibular aqueduct", "pfeiffer syndrome", "charge syndrome",
+            "down", "trisomy 21", "22q11.2 deletion syndrome");
+    private List<String> hearingAid = Arrays.asList("wears", "uses", "using", "fit with", "hearing aid", "hearing aids",
+            "baha");
+    private List<List<String>> histories = Arrays.asList(hearingScreen, hearingLoss, earlyIntervention,
+            riskFactors, hearingAid);
 
+    //test subcategory
+    private List<String> cochlearFunction = Arrays.asList("oae", "otoacoustic emission", "toae",
+            "transient otoacoustic emission dpoae", "distortion product otoacoustic emission");
+    private List<String> evokedPotential = Arrays.asList("automated auditory brainstem response", "aabr", "screening abr",
+            "screen by abr", "auditory brainstem response screen", "auditory brainstem response",
+            "brainstem auditory response", "brianstem auditory evoked potential", "abr", "aep", "assr",
+            "auditory steady state response");
+    private List<String> middleEarFunction = Arrays.asList("acoustic impedance", "tympanometry", "immittance", "immitance",
+            "typmanogram", "226hz probe tone", "1000hz probe tone", "high frequency probe tone",
+            "low frequency probe tone", "acoustic reflex");
+    private List<String> behavourialAudiometry = Arrays.asList("pure tone audiometry", "pure tone air or bone conduction",
+            "visual reinforcement audiometry", "vra", "sat", "speech awareness threshold",
+            "srt speech reception threshold", "play audiometry", "conditioned play audiometry", "cpa");
+    private List<List<String>> tests = Arrays.asList(cochlearFunction, evokedPotential, middleEarFunction,
+            behavourialAudiometry);
+
+    //recommendation: no subcategory
+    private List<String> recommendation = Arrays.asList("return if there is concern", "return if hearing concerns arise",
+            "back for", "retest", "complete", "repeat", "further testing", "audiologic re-evaluation", "hearing re-evaluation",
+            "hearing re-evaluated (and when)", "monitor auditory status", "audiological monitoring", "hearing monitor",
+            "sedated abr", "abr", "assr", "hearing rescreen", "hearing screen", "oae medical follow up", "follow up with",
+            "ent", "ear nose throat", "otolaryngology", "speech language pathologist", "hearing aid", "amplification",
+            "hearing aid consultation", "hearing aid fitting", "hearing aid evaluation", "trial with hearing amplification",
+            "trial with hearing aid", "assistive listening devices", "baha", "cochlear implant", "medical clearance",
+            "early intervention", "continue to participate in early intervention services",
+            "children with special healthcare needs, head start", "speech langage therpay", "speech therapy",
+            "auditory verbal therapy");
+
+    @FXML private TextArea textArea;
+    @FXML private TextField fileName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         app = App.getInstance();
         user = app.getUser();
-        file = Paths.get("out.txt");
+        file = Paths.get("Report.txt");
+        String f = null;
+        report = new Report();
 
-        //Loading the tokenizer model
         try {
-            InputStream inputStreamTokenizer = new
-                    FileInputStream("./models/en-token.bin");
-            TokenizerModel tokenModel = new TokenizerModel(inputStreamTokenizer);
-
-            //Instantiating the TokenizerME class
-            TokenizerME tokenizer = new TokenizerME(tokenModel);
-
             //read the input text as a single string
-
-            FileReader in = new FileReader("./out.txt");
+            FileReader in = new FileReader("./Report.txt");
             BufferedReader br = new BufferedReader(in);
 
             String line = br.readLine();
-            String sentence = line;
+            f = line;
             while (line != null) {
-                sentence += line;
+                f += line;
                 line = br.readLine();
             }
 
-            //Tokenizing the sentence in to a string array
-            String tokens[] = tokenizer.tokenize(sentence);
+            //load sentence detector model
+            InputStream modelIn = new FileInputStream("./models/da-sent.bin");
+            SentenceModel model = new SentenceModel(modelIn);
+            SentenceDetectorME sentenceDetector = new SentenceDetectorME(model);
 
-            //Loading the name finder model
-            InputStream inputStreamNameFinder = new FileInputStream("./models/en"
-                    + "-ner-person.bin");
-            TokenNameFinderModel name_model = new TokenNameFinderModel(inputStreamNameFinder);
+            //divide input file into sentences
+            String sentences[] = sentenceDetector.sentDetect(f);
 
-            NameFinderME nameFinder = new NameFinderME(name_model);
-            Span nameSpans[] = nameFinder.find(tokens);
-
-            //Printing the names and their spans in a sentence
-
-            output += "NAMES: ";
-            for (Span s : nameSpans) {
-                //print out the name as well as its location
-                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
-
-                //only print out name
-                //System.out.println(tokens[s.getStart()]);
+            //close sentence detector model
+            if (modelIn != null) {
+                try {
+                    modelIn.close();
+                }
+                catch (IOException e) {
+                }
             }
 
-            //loading the date finder model
-            InputStream inputStreamNameFinder2 = new FileInputStream("./models/en"
-                    + "-ner-date.bin");
-            TokenNameFinderModel date_model = new TokenNameFinderModel(inputStreamNameFinder2);
+            // load tokenizer model
+            InputStream inputStreamTokenizer = new
+                    FileInputStream("./models/en-token.bin");
+            TokenizerModel tokenModel = new TokenizerModel(inputStreamTokenizer);
+            TokenizerME tokenizer = new TokenizerME(tokenModel);
 
-            NameFinderME dateFinder = new NameFinderME(date_model);
-            Span dateSpans[] = dateFinder.find(tokens);
-            output += "\n";
-            //Printing the names and their spans in a sentence
-            output += ("DATES: ");
-            for (Span s : dateSpans) {
-                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
+            //Tokenizing input file in to a string array
+            String[][] document = new String[sentences.length][];
+            for (int i = 0; i < sentences.length; i++) {
+                document[i] = tokenizer.tokenize(sentences[i]);
             }
 
-            //loading the location finder model
-            InputStream inputStreamNameFinder3 = new FileInputStream("./models/en"
-                    + "-ner-location.bin");
-            TokenNameFinderModel location_model = new TokenNameFinderModel(inputStreamNameFinder3);
-
-            NameFinderME locationFinder = new NameFinderME(location_model);
-            Span locationSpans[] = locationFinder.find(tokens);
-
-            output+= "\n";
-            //Printing the names and their spans in a sentence
-            output += ("LOCATIONS: ");
-            for (Span s : locationSpans) {
-                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
+            //close tokenizer model
+            if (inputStreamTokenizer != null) {
+                try {
+                    inputStreamTokenizer.close();
+                }
+                catch (IOException e) {
+                }
             }
 
-            //loading the organization finder model
-            InputStream inputStreamNameFinder4 = new FileInputStream("./models/en"
-                    + "-ner-organization.bin");
-            TokenNameFinderModel org_model = new TokenNameFinderModel(inputStreamNameFinder4);
+            //process general patient information
+            String[] modelNames = new String[]{"person", "date", "location", "organization"};
+            for (String modelName : modelNames) {
+                //load model
+                InputStream inputStreamNameFinder = new FileInputStream("./models/en"
+                        + "-ner-" + modelName + ".bin");
+                TokenNameFinderModel name_model = new TokenNameFinderModel(inputStreamNameFinder);
+                NameFinderME nameFinder = new NameFinderME(name_model);
 
-            NameFinderME orgFinder = new NameFinderME(org_model);
-            Span orgSpans[] = orgFinder.find(tokens);
+                List<String> results = new ArrayList<>();
+                for (String[] sentence : document) {
+                    Span nameSpans[] = nameFinder.find(sentence);
+                    // save results
+                    for (Span s : nameSpans) {
+                        results.add(sentence[nameSpans[0].getStart()]);
+                    }
+                }
+                nameFinder.clearAdaptiveData();
+                if (!results.isEmpty()) {
+                    if (modelName.equals("date")) {
+                        report.info.add(results.get(0));
+                        if (results.size() == 1) {
+                            report.info.add(null);
+                        } else {
+                            report.info.add(results.get(1));
+                        }
+                    } else {
+                        report.info.add(results.get(0));
+                    }
+                } else {
+                    report.info.add(null);
+                }
 
-            output += "\n";
-            //Printing the names and their spans in a sentence
-            output += ("Organizations: ");
-            for (Span s : orgSpans) {
-                output += (s.toString() + "  " + tokens[s.getStart()] + "\n");
+                //close name finder model
+                if (inputStreamNameFinder != null) {
+                    try {
+                        inputStreamTokenizer.close();
+                    }
+                    catch (IOException e) {
+                    }
+                }
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //string matching on medical terms
+        String lowerCased = f.toLowerCase();
+
+        //general info: sex
+        if (lowerCased.indexOf("male") != -1) {
+            report.info.add("male");
+        } else if (lowerCased.indexOf("female") != -1) {
+            report.info.add("female");
+        } else {
+            report.info.add(null);
+        }
+
+        //histories
+        for (List<String> history : histories) {
+            List<String> ls = new ArrayList<>();
+            for (String s : history) {
+                if (lowerCased.indexOf(s) != -1) {
+                    ls.add(s);
+                }
+            }
+            report.history.add(ls);
+        }
+
+        //tests
+        for (List<String> history : tests) {
+            List<String> ls = new ArrayList<>();
+            for (String s : history) {
+                if (lowerCased.indexOf(s) != -1) {
+                    ls.add(s);
+                }
+            }
+            report.test.add(ls);
+        }
+
+        //recommendations
+        for (String s : recommendation) {
+            if (lowerCased.indexOf(s) != -1) {
+                report.recommendation.add(s);
+            }
+        }
+
+        String result = report.toString();
+        textArea.setText(result);
+    }
+
+    @FXML
+    protected void edit() {
+        try {
+            String modified = textArea.getText();
+            String name = fileName.getText();
+
+            Path dir = Paths.get("keyFeatures");
+            Path fileToCreatePath = dir.resolve(name + ".txt");
+            Path newFilePath = Files.createFile(fileToCreatePath);
+
+            Files.write(newFilePath, modified.getBytes());
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("File Edited");
+            alert.setContentText("File Successfully Edited And Saved");
+            alert.showAndWait();
+
         } catch (IOException e) {
             System.out.println(e);
         }
-
-        output += "HEARING STATUS: OK";
-
-        content.setText(output);
-
-//        try {
-////            Scanner scan = new Scanner(file).useDelimiter("\\s+");
-////            while (scan.hasNextLine()) {
-////                textArea.appendText(scan.nextLine() + "\n");
-////            }
-////
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
     }
-
 
     @FXML
     protected void processHome() {
@@ -158,16 +270,6 @@ public class ReviewDocController implements Initializable {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-
-    @FXML
-    protected void edit() {
-        try {
-            app.replaceSceneContent("/main/resources/fxml/EditDoc.fxml", 700, 550);
-        } catch (Exception e) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-
 
     //helper method for reading files entirely into textarea
     static String readFile(Path filename)

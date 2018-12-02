@@ -31,10 +31,10 @@ public class NewDocController implements Initializable {
         selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
-            System.out.println("selected: " + selectedFile.getName());
+            System.out.println("File selected: " + selectedFile.getName());
             fileName.setText(selectedFile.getName());
         } else {
-            System.out.println("not selected");
+            System.out.println("File not selected");
         }
     }
 
