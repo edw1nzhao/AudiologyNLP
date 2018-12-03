@@ -27,10 +27,10 @@
         </font>
     </Label>
 
-    <Button layoutX="70.0" layoutY="420.0" mnemonicParsing="false" onAction="#processHome" prefWidth="100.0" text="Cancel" />
-    <Button layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#edit" prefWidth="100.0" text="Save" />
+    <Button layoutX="70.0" layoutY="370.0" mnemonicParsing="false" onAction="#processHome" prefWidth="100.0" text="Cancel" />
+    <Button layoutX="70.0" layoutY="410.0" mnemonicParsing="false" onAction="#edit" prefWidth="100.0" text="Save" />
 
     <Separator layoutX="225.0" layoutY="75.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0" />
-      <TextField fx:id="txtName" layoutX="68.0" layoutY="386.0" prefHeight="27.0" prefWidth="150.0" text="Enter File Name Here" />
+      <TextField fx:id="txtName" layoutX="70.0" layoutY="450.0" prefHeight="27.0" prefWidth="150.0" text="Enter File Name Here" />
 </children>
 </AnchorPane>

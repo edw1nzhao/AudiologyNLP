@@ -11,6 +11,7 @@ import main.java.com.model.User;
 import main.java.com.model.Report;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -20,13 +21,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import opennlp.tools.namefind.NameFinderME;
+import opennlp.tools.namefind.NameSample;
+import opennlp.tools.namefind.NameSampleDataStream;
+import opennlp.tools.namefind.TokenNameFinderFactory;
 import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.sentdetect.SentenceDetectorME;
 import opennlp.tools.sentdetect.SentenceModel;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
+import opennlp.tools.util.InputStreamFactory;
+import opennlp.tools.util.MarkableFileInputStreamFactory;
+import opennlp.tools.util.ObjectStream;
+import opennlp.tools.util.PlainTextByLineStream;
 import opennlp.tools.util.Span;
+import opennlp.tools.util.TrainingParameters;
 
+import javax.xml.soap.Text;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,6 +51,7 @@ public class ReviewDocController implements Initializable {
     private static User user;
     private Path file;
     private Report report;
+    private String[][] document;
 
     //history subcategory
     private List<String> hearingScreen = Arrays.asList("newborn hearing screen", "hearing screen",
@@ -89,18 +100,19 @@ public class ReviewDocController implements Initializable {
 
     @FXML private TextArea textArea;
     @FXML private TextField fileName;
+    @FXML private TextField trainingModel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         app = App.getInstance();
         user = app.getUser();
-        file = Paths.get("Report.txt");
+        file = Paths.get("out.txt");
         String f = null;
         report = new Report();
 
         try {
             //read the input text as a single string
-            FileReader in = new FileReader("./Report.txt");
+            FileReader in = new FileReader("./out.txt");
             BufferedReader br = new BufferedReader(in);
 
             String line = br.readLine();
@@ -134,7 +146,7 @@ public class ReviewDocController implements Initializable {
             TokenizerME tokenizer = new TokenizerME(tokenModel);
 
             //Tokenizing input file in to a string array
-            String[][] document = new String[sentences.length][];
+            document = new String[sentences.length][];
             for (int i = 0; i < sentences.length; i++) {
                 document[i] = tokenizer.tokenize(sentences[i]);
             }
@@ -184,7 +196,7 @@ public class ReviewDocController implements Initializable {
                 //close name finder model
                 if (inputStreamNameFinder != null) {
                     try {
-                        inputStreamTokenizer.close();
+                        inputStreamNameFinder.close();
                     }
                     catch (IOException e) {
                     }
@@ -263,6 +275,53 @@ public class ReviewDocController implements Initializable {
     }
 
     @FXML
+    protected void selfTrain() {
+        try {
+            String modelName = trainingModel.getText();
+
+            InputStream inputStreamNameFinder = new FileInputStream("./models/en"
+                    + "-ner-" + modelName + ".bin");
+            TokenNameFinderModel name_model = new TokenNameFinderModel(inputStreamNameFinder);
+            NameFinderME nameFinder = new NameFinderME(name_model);
+
+            List<String> results = new ArrayList<>();
+            for (String[] sentence : document) {
+                Span nameSpans[] = nameFinder.find(sentence);
+                // save results
+                for (Span s : nameSpans) {
+                    results.add(sentence[nameSpans[0].getStart()]);
+                }
+            }
+
+            nameFinder.clearAdaptiveData();
+
+            StringBuilder sb = new StringBuilder();
+            Iterator<String> it = results.iterator();
+            while (it.hasNext()) {
+                sb.append(it.next() + ", ");
+            }
+            if (sb.length() > 0) {
+                sb.deleteCharAt(sb.length() - 1);
+                sb.deleteCharAt(sb.length() - 1);
+                sb.append("\n");
+            }
+
+            textArea.setText(sb.toString());
+
+            //close name finder model
+            if (inputStreamNameFinder != null) {
+                try {
+                    inputStreamNameFinder.close();
+                }
+                catch (IOException e) {
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     protected void processHome() {
         try {
             app.replaceSceneContent("/main/resources/fxml/Main.fxml", 700, 550);
@@ -271,11 +330,4 @@ public class ReviewDocController implements Initializable {
         }
     }
 
-    //helper method for reading files entirely into textarea
-    static String readFile(Path filename)
-            throws IOException
-    {
-        byte[] encoded = Files.readAllBytes(filename);
-        return new String(encoded);
-    }
 }

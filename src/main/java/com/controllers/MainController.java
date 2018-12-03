@@ -31,4 +31,13 @@ public class MainController implements Initializable {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @FXML
+    protected void processTrainModel() {
+        try {
+            app.replaceSceneContent("/main/resources/fxml/TrainModel.fxml", 700, 550);
+        } catch (Exception ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
