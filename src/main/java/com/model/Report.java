@@ -6,20 +6,23 @@ public class Report {
     public List<String> info;
     public List<List<String>> history;
     public List<List<String>> test;
+    public List<List<String>> report;
     public List<String> recommendation;
 
     private String[] headings = new String[]{"General patient info", "Case history",
-            "Test", "Recommendation/plan"};
+            "Test", "Result", "Recommendation/plan"};
     private List<String> infoHeadings = Arrays.asList("Name", "DOB", "Date of Visit", "Location", "Organization", "Sex");
     private List<String> historyHeadings = Arrays.asList("Hearing screen", "Known hearing loss",
             "Early intervention", "Risk factors", "Hearing aid");
     private List<String> testHeadings = Arrays.asList("Cochlear function", "Evoked potential",
             "Middle ear function", "Behavourial audiometry");
+    private List<String> reportHeadings = Arrays.asList("General Result", "Degree", "Which ear", "Type");
 
     public Report() {
         info = new ArrayList<>();
         history = new ArrayList<>();
         test = new ArrayList<>();
+        report = new ArrayList<>();
         recommendation = new ArrayList<>();
     }
 
@@ -61,12 +64,28 @@ public class Report {
             sb.append("\n");
         }
 
+        sb.append("-Result:\n");
+        Iterator reportHeadingIt = reportHeadings.iterator();
+        Iterator reportIt = report.iterator();
+        while (reportIt.hasNext()) {
+            sb.append(reportHeadingIt.next() + ": ");
+            List<String> ls = (List<String>)reportIt.next();
+            for (String s : ls) {
+                sb.append(s + ",");
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            sb.append("\n");
+        }
+
         sb.append("-Recommendation:\n");
         for (String r : recommendation) {
             sb.append(r + ",");
         }
         sb.deleteCharAt(sb.length() - 1);
         sb.append("\n");
+
+        sb.append("-Child Hearing Loss: yes\n");
+        sb.append("-Hearing Loss Degree: mild\n");
 
         return sb.toString();
     }

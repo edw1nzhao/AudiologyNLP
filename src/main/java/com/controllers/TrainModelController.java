@@ -39,7 +39,8 @@ public class TrainModelController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        app = App.getInstance();
+        user = app.getUser();
     }
 
     @FXML

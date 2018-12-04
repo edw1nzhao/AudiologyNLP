@@ -86,6 +86,25 @@ public class ReviewDocController implements Initializable {
     private List<List<String>> tests = Arrays.asList(cochlearFunction, evokedPotential, middleEarFunction,
             behavourialAudiometry);
 
+    //report subcategory
+    private List<String> generalResult = Arrays.asList("adequate for communication", "not adequate for communication",
+            "acquisition of speech", "acquisition of language skills", "normal in at least one ear",
+            "normal hearing range", "normal hearing", "abnormal hearing", "normal auditory function",
+            "reduced auditory sensitivity", "can not rule out hearing loss", "possible hearing loss", "hearing loss",
+            "undetermined/ indeterminate hearing loss", "type of hearing loss could not be determined",
+            "unknown whether hearing loss is conductive, mix or sensorineural", "possible hearing loss",
+            "possibility of hearing loss");
+    private List<String> degree = Arrays.asList("minimal", "slight", "mild", "moderate", "moderately severe",
+            "severe", "profound", "un/indetermined");
+    private List<String> ear = Arrays.asList("left", "right", "as", "ad", "au", "bilateral", "bilaterally",
+            "unilateral", "unilaterally", "both ears", "in one ear", "unrestricted hearing of contralateral ear");
+    private List<String> type = Arrays.asList("conductive hearing loss", "sensorineural hearing loss",
+            "senori-neural hearing loss", "mixed hearing loss", "sensory hearing loss", "neural hearing loss",
+            "auditory neuropathy", "type of hearing loss could not be determined",
+            "unknown whether hearing loss is conductive", "mix hearing loss", "sensorineural hearing loss",
+            "central hearing loss", "auditory neuropathy");
+    private List<List<String>> reports = Arrays.asList(generalResult, degree, ear, type);
+
     //recommendation: no subcategory
     private List<String> recommendation = Arrays.asList("return if there is concern", "return if hearing concerns arise",
             "back for", "retest", "complete", "repeat", "further testing", "audiologic re-evaluation", "hearing re-evaluation",
@@ -97,6 +116,7 @@ public class ReviewDocController implements Initializable {
             "early intervention", "continue to participate in early intervention services",
             "children with special healthcare needs, head start", "speech langage therpay", "speech therapy",
             "auditory verbal therapy");
+
 
     @FXML private TextArea textArea;
     @FXML private TextField fileName;
@@ -231,14 +251,25 @@ public class ReviewDocController implements Initializable {
         }
 
         //tests
-        for (List<String> history : tests) {
+        for (List<String> test : tests) {
             List<String> ls = new ArrayList<>();
-            for (String s : history) {
+            for (String s : test) {
                 if (lowerCased.indexOf(s) != -1) {
                     ls.add(s);
                 }
             }
             report.test.add(ls);
+        }
+
+        //reports
+        for (List<String> r : reports) {
+            List<String> ls = new ArrayList<>();
+            for (String s : r) {
+                if (lowerCased.indexOf(s) != -1) {
+                    ls.add(s);
+                }
+            }
+            report.report.add(ls);
         }
 
         //recommendations

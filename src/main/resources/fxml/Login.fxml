@@ -7,11 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
+<?import javafx.scene.text.Font?>
 <StackPane id="Login" styleClass="login"
            xmlns:fx="http://javafx.com/fxml/1"
            xmlns="http://javafx.com/javafx/8.0.121"
            fx:controller="main.java.com.controllers.LoginController"
            prefWidth="700" prefHeight="550">
+
+    <!--<Label layoutX="0.0" layoutY="0.0" text="AudiologyNLP">-->
+        <!--<font>-->
+            <!--<Font size="51.0"/>-->
+
+        <!--</font>-->
+    <!--</Label>-->
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity">
         <Label layoutX="20.0" layoutY="100.0" text="Password:" />
         <Label layoutX="20.0" layoutY="60.0" text="User:" />

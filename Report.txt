@@ -1,6 +1,6 @@
 Report_2016_001
 
-Patient Name: Jack Wood			DOB: May 6th 2017
+Patient Name: <Start: Name>Jack Wood <End>		DOB: May 6th 2017
 Parents: Amy Ma				DOE: 12/9/2015
 Referral Source: Dr.Peter Jones, MD	
 
