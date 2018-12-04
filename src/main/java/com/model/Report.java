@@ -84,9 +84,6 @@ public class Report {
         sb.deleteCharAt(sb.length() - 1);
         sb.append("\n");
 
-        sb.append("-Child Hearing Loss: yes\n");
-        sb.append("-Hearing Loss Degree: mild\n");
-
         return sb.toString();
     }
 
