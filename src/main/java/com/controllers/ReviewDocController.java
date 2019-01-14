@@ -290,10 +290,14 @@ public class ReviewDocController implements Initializable {
             String name = fileName.getText();
 
             Path dir = Paths.get("keyFeatures");
-            Path fileToCreatePath = dir.resolve(name + ".txt");
-            Path newFilePath = Files.createFile(fileToCreatePath);
-
-            Files.write(newFilePath, modified.getBytes());
+//            Path fileToCreatePath = dir.resolve(name + ".txt");
+//            Path newFilePath = Files.createFile(fileToCreatePath);
+//
+//            Files.write(newFilePath, modified.getBytes());
+            PrintWriter pw = new PrintWriter(new File("keyFeatures/" + name + ".csv"));
+            pw.write(modified);
+            pw.close();
+            System.out.println("done");
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("File Edited");
